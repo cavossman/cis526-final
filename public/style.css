@@ -1,0 +1,107 @@
+div img{
+  margin: 10px;
+  display: inline-block;
+  float: left;
+  width: 200px;
+  height: 300px;
+}
+
+h1 {
+  font-family: 'Noto Serif', serif;
+  color: #454854;
+}
+
+div h2 {
+  font-family: 'Noto Serif', serif;
+  color: #454854;
+  margin: 5px;
+}
+
+body {
+  background-color: #363237;
+}
+
+body img:first-child {
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+}
+
+div body {
+  margin: 5px;
+  width: 200px;
+  display: inline-block;
+  float: right;
+}
+
+div form{
+  margin-top: 10px;
+}
+
+.container div{
+  font-family: 'Noto Serif', serif;
+  min-width: 500px;
+  min-height: 500px;
+  max-width: 500px;
+  max-height: auto;
+  vertical-align: top;
+  display: inline-block;
+  margin: 5px;
+  background-color: #7B829B;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 20px;
+  float: left;
+}
+
+.thumbnails {
+	font-family: 'Noto Serif', serif;
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 500px;
+  max-height: auto;
+  vertical-align: top;
+  display: inline-block;
+  margin: 5px;
+  background-color: #363237;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+
+.thumbnails div {
+	font-family: 'Noto Serif', serif;
+  min-width: 500px;
+  min-height: 50px;
+  max-width: 500px;
+  max-height: auto;
+  vertical-align: top;
+  display: inline-block;
+  margin: 5px;
+  background-color: #7B829B;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.thumbnails img {
+  height: 40px;
+  width: 40px;
+}
+
+.enlargedImage {
+  font-family: 'Noto Serif', serif;
+  min-width: 500px;
+  min-height: 500px;
+  max-width: 500px;
+  max-height: auto;
+  vertical-align: top;
+  display: inline-block;
+  margin: 5px;
+  background-color: #7B829B;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 20px;
+  float: right;
+}
