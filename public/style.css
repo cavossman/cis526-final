@@ -18,7 +18,7 @@ div h2 {
 }
 
 body {
-  background-color: #363237;
+  background-color: #b2b2b2;
 }
 
 body img:first-child {
@@ -104,4 +104,8 @@ div form{
   padding: 10px;
   border-radius: 20px;
   float: right;
+}
+
+#bannerImg{
+  width: 200px;
 }
