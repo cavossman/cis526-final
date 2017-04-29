@@ -17,9 +17,10 @@ function clearAllThumbnails() {
     $('div.thumbnails').empty();
 }
 
+// Only needed to create the login form.
 function insertclasses(classes) {
     var classDiv = $('div.container')
-    classDiv.append(createNewClassDiv());
+    classDiv.append(createLoginForm());
 	var thumbnails = $('div.thumbnails')
     addSubmitCallback()
     classes.forEach(function(c) {
@@ -27,8 +28,15 @@ function insertclasses(classes) {
     });
 }
 
-function createNewClassDiv(){
-  return $('<div id="newClassDiv" style="display: none;"><h1>Submit a New Pokemon</p><form id="newClass" method="POST" enctype="multipart/form-data"><input type="text" name="class" placeholder="Pokemon name"><input type="text" name="description" placeholder="Pokemon description"><input type="file" name="image"><input type="submit" value="Submit Pokemon"></form></div>');
+
+function createLoginForm() {
+  return $(   '<div id="loginForm" style="display: none;">'
+			+   '<form id="newClass" method="POST" enctype="multipart/form-data">'
+			+     '<input type="text" name="class" placeholder="username">'
+			+	   '<input type="text" name="description" placeholder="password">'
+			+	   '<input type="submit" value="Login">'
+			+	 '</form>'
+			+ '</div>');
 }
 
 function clearAndLoad(id) {
@@ -95,5 +103,5 @@ $("#bannerImg").click(function() {
 })
 
 $("#button").click(function(){
-  $("#newClassDiv").show()
+  $("#loginForm").toggle();
 })

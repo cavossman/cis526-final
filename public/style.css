@@ -8,7 +8,7 @@ div img{
 
 h1 {
   font-family: 'Noto Serif', serif;
-  color: #454854;
+  color: #b2b2b2;
 }
 
 div h2 {
@@ -40,14 +40,14 @@ div form{
 
 .container div{
   font-family: 'Noto Serif', serif;
-  min-width: 500px;
-  min-height: 500px;
-  max-width: 500px;
-  max-height: auto;
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 230px;
+  max-height: 250;
   vertical-align: top;
   display: inline-block;
   margin: 5px;
-  background-color: #7B829B;
+  background-color: #363237;
   box-sizing: border-box;
   padding: 10px;
   border-radius: 20px;
