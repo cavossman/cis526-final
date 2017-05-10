@@ -13,33 +13,23 @@ var staticFiles = require('./lib/static')
 var router = new (require('./lib/route')).Router(db);
 staticFiles.loadDir('./public', router);
 
-
+// Problem here when log in and sign up buttons hit
 router.get('/', function(req, res) {
   fs.readFile('public/index.html', function(err, body){
     res.end(body);
   });
 });
 
-
-var project = router.resource('/classes', require('./src/resource/classes.js'))
-
+// projects.js or classes.js?
+var project = router.resource('/classes', require('./src/resource/classes.js'));
 
 var migrate = require('./lib/migrate');
 migrate(db, 'migrations', function(err){
-/*
-  fs.readFile('public/Diablo-II-icon.png', function(err, body) {
-    if(err) console.log(err)
-    db.run('INSERT INTO projects (name, description, image) VALUES (?,?,?)', ['diabloII', 'icon', body], function(err){
-      if(err) console.log(err)
-    })
-  })*/
-
-
   var server = new http.Server(function(req, res) {
     router.route(req, res);
   });
+  
   server.listen(PORT, function(){
     console.log("listening on port " + PORT);
   });
-
 });

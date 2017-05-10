@@ -12,7 +12,7 @@ function clearAll() {
 }
 
 function createForms() {
-    var classDiv = $('div.container')
+    var classDiv = $('div.container');
     classDiv.append(createLoginForm());
 	classDiv.append(createSignupForm());
 }
