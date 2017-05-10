@@ -11,7 +11,7 @@ function redraw() {
 function clearAll() {
     $('div.enlargedImage').empty();
 	$('div.container').empty();
-}
+	}
 
 function clearAllThumbnails() {
     $('div.thumbnails').empty();
@@ -34,7 +34,15 @@ function createLoginForm() {
 			+   '<form id="newClass" method="POST" enctype="multipart/form-data">'
 			+     '<input type="text" name="class" placeholder="username">'
 			+	   '<input type="text" name="description" placeholder="password">'
-			+	   '<input type="submit" value="Login">'
+			+		'<input list="browsers" name="browser">'
+			+        '<datalist id="browsers">'
+			+      		'<option value="Computer Science">'
+			+      		'<option value="Software Engineering">'
+			+      		'<option value="Architecture">'
+			+     		'<option value="Chemical Engineering">'
+			+      		'<option value="Mechanical Engineering">'
+			+        '</datalist>'
+			+	   '<input type="submit" value="Login" id="login">'
 			+	 '</form>'
 			+ '</div>');
 }
