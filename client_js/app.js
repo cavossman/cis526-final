@@ -4,7 +4,7 @@ var api = require('./api.js');
 function redraw() {
     clearAllThumbnails();
     api.getclasses(function(classes) {
-        insertclasses(classes);
+        createForms(classes);
     });
 }
 
@@ -18,14 +18,10 @@ function clearAllThumbnails() {
 }
 
 // Only needed to create the login form.
-function insertclasses(classes) {
+function createForms(classes) {
     var classDiv = $('div.container')
     classDiv.append(createLoginForm());
-	var thumbnails = $('div.thumbnails')
-    addSubmitCallback()
-    classes.forEach(function(c) {
-        thumbnails.append(createThumbnail(c));
-    });
+	classDiv.append(createSignupForm());
 }
 
 
@@ -34,7 +30,17 @@ function createLoginForm() {
 			+   '<form id="newClass" method="POST" enctype="multipart/form-data">'
 			+     '<input type="text" name="class" placeholder="username">'
 			+	   '<input type="text" name="description" placeholder="password">'
-			+		'<input list="browsers" name="browser">'
+			+	   '<input type="submit" value="Login" id="login">'
+			+	 '</form>'
+			+ '</div>');
+}
+
+function createSignupForm() {
+  return $(   '<div id="signupForm" style="display: none;">'
+			+   '<form id="newClass" method="POST" enctype="multipart/form-data">'
+			+     '<input type="text" name="class" placeholder="username">'
+			+	   '<input type="text" name="description" placeholder="password">'
+			+		'<input list="browsers" name="browser" placeholder="major">'
 			+        '<datalist id="browsers">'
 			+      		'<option value="Computer Science">'
 			+      		'<option value="Software Engineering">'
@@ -42,7 +48,7 @@ function createLoginForm() {
 			+     		'<option value="Chemical Engineering">'
 			+      		'<option value="Mechanical Engineering">'
 			+        '</datalist>'
-			+	   '<input type="submit" value="Login" id="login">'
+			+	   '<input type="submit" value="Sign Up" id="signup">'
 			+	 '</form>'
 			+ '</div>');
 }
@@ -111,5 +117,12 @@ $("#bannerImg").click(function() {
 })
 
 $("#button").click(function(){
+  /*if ($("#signupForm").visibility == true){
+	$("#signupForm").toggle();
+  }*/
   $("#loginForm").toggle();
+})
+	
+$("#signupButton").click(function(){
+  $("#signupForm").toggle();
 })
