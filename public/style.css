@@ -22,16 +22,10 @@ body {
   padding: 10px;
   border-radius: 20px;
   float: left;
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
 }
 
 .containter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  
 }
 
 .topBar {

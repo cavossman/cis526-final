@@ -1,3 +1,5 @@
+/* Not used at the moment in cis526 final */
+
 module.exports = {
   getclasses: getclasses,
   getClassByID: getClassByID,
