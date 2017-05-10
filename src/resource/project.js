@@ -19,7 +19,7 @@ module.exports = {
  * @param {sqlite3.Database} db - the database object
  */
 function list(req, res, db) {
-  db.all("SELECT * FROM projects", [], function(err, projects){
+  db.all("SELECT * FROM classes_students", [], function(err, projects){
     if(err) {
       console.error(err);
       res.statusCode = 500;
@@ -51,13 +51,13 @@ function create(req, res, db) {
 
   req.on("end", function() {
     var project = JSON.parse(body);
-    db.run("INSERT INTO projects (name, description, version, repository, license) VALUES (?,?,?,?,?)",
+    db.run("INSERT INTO classes_students (student, class) VALUES (?,?)",
       [project.name, project.description, project.version, project.repository, project.license],
       function(err) {
         if(err) {
           console.error(err);
           res.statusCode = 500;
-          res.end("Could not insert project into database");
+          res.end("Could not mark student as having taken class.");
           return;
         }
         res.statusCode = 200;
@@ -75,7 +75,7 @@ function create(req, res, db) {
  */
 function read(req, res, db) {
   var id = req.params.id;
-  db.get("SELECT * FROM projects WHERE id=?", [id], function(err, project){
+  db.get("SELECT * FROM classes_students WHERE student=?", [id], function(err, project){
     if(err) {
       console.error(err);
       res.statusCode = 500;
@@ -115,7 +115,7 @@ function update(req, res, db) {
 
   req.on("end", function() {
     var project = JSON.parse(body);
-    db.run("UPDATE projects SET name=?, description=?, version=?, repository=?, license=? WHERE id=?",
+    db.run("UPDATE classes_students SET class=? WHERE student=?",
       [project.name, project.description, project.version, project.repository, project.license, id],
       function(err) {
         if(err) {
@@ -133,13 +133,13 @@ function update(req, res, db) {
 
 /** @destroy
  * Removes the specified project from the database.
- * @param {http.incomingRequest} req - the request object 
+ * @param {http.incomingRequest} req - the request object
  * @param {http.serverResponse} res - the response object
  * @param {sqlite3.Database} db - the database object
  */
 function destroy(req, res, db) {
   var id = req.params.id;
-  db.run("DELETE FROM projects WHERE id=?", [id], function(err) {
+  db.run("DELETE FROM classes_students WHERE student=?", [id], function(err) {
     if(err) {
       console.error(err);
       res.statusCode = 500;
