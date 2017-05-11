@@ -22,10 +22,26 @@ body {
   padding: 10px;
   border-radius: 20px;
   float: left;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
-.containter {
-  
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.topBar button {
+  background-color: #5a117e; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .topBar {
@@ -33,7 +49,7 @@ body {
   top:0px;
   right:0px;
   left:0px;
-  background-color: #561251;
+  background-color: #5a117e;
 }
 
 #bannerImg{
