@@ -20,18 +20,32 @@ body {
   background-color: #363237;
   box-sizing: border-box;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 input {
   position: relative;
   display: block;
   margin : 0 auto;
+  margin-bottom: 5px;
   
   text-align: center;
   padding: 5 px;
+  border-radius: 5px;
 }
-
+button {
+  border-radius: 5px;
+}
+#pleaseLogin {
+  position: relative;
+  display: block;
+  margin : 0 auto;
+}
+#pleaseSignup {
+  position: relative;
+  display: block;
+  margin : 0 auto;
+}
 .container {
   position: absolute;
   top:50px;
@@ -56,4 +70,11 @@ input {
   right:0px;
   left:0px;
   background-color: #5a117e;
+}
+
+#welcomeMessage {
+  background-color: #FFFFFF;
+}
+#welcomebackMessage {
+  background-color: #FFFFFF;
 }

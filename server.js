@@ -20,7 +20,6 @@ router.get('/', function(req, res) {
   });
 });
 
-// projects.js or classes.js?
 var project = router.resource('/classes', require('./src/resource/classes.js'));
 
 var migrate = require('./lib/migrate');
